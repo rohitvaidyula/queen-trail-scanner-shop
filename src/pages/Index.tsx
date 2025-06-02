@@ -30,6 +30,36 @@ const Index = () => {
         <div className="absolute inset-0 bg-espresso-900/10"></div>
         <div className="relative z-10 px-6 py-20 text-center">
           <div className="animate-fade-in">
+            {/* Logo and Founder Section */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
+              {/* Logo */}
+              <div className="relative group">
+                <div className="absolute inset-0 bg-warm-clay-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                <img 
+                  src="/lovable-uploads/1960f31f-f620-420f-98f6-2d0b6d504877.png" 
+                  alt="Trailblazer Queen Productions Logo" 
+                  className="relative w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              
+              {/* Founder Image */}
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-warm-clay-400/30 to-bronze-glow-400/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                <div className="relative glass-effect rounded-2xl p-2 group-hover:scale-105 transition-transform duration-300">
+                  <img 
+                    src="/lovable-uploads/d2c25584-d51e-45fd-ac14-36f6b6230778.png" 
+                    alt="Founder - Mrs Universe Elite USA 2025" 
+                    className="w-48 h-64 md:w-56 md:h-72 object-cover rounded-xl shadow-2xl"
+                  />
+                </div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
+                  <div className="glass-effect px-4 py-2 rounded-full">
+                    <p className="text-sm font-semibold text-espresso-800">Mrs Universe Elite USA 2025</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <h1 className="text-5xl md:text-7xl font-bold mb-6 warm-clay-text-gradient">
               Trailblazer Queen
             </h1>
