@@ -20,20 +20,20 @@ export default {
 		},
 		extend: {
 			colors: {
-				// Desert Elegance color palette
-				'golden-sand': {
-					50: '#faf9f5',
-					100: '#f4f1e7',
-					200: '#e9e2ce',
-					300: '#dcc491',
-					400: '#d4bb7e',
-					500: '#cbb26b',
-					600: '#c0a458',
-					700: '#a68a47',
-					800: '#8b7339',
-					900: '#6d5a2d',
+				// Rose Gold and Charcoal color palette
+				'rose-gold': {
+					50: '#fdf9f8',
+					100: '#fbf2f0',
+					200: '#f6e5e1',
+					300: '#efd1ca',
+					400: '#e5b6aa',
+					500: '#d4a29c',
+					600: '#c48e84',
+					700: '#b17a6e',
+					800: '#936658',
+					900: '#785549',
 				},
-				'obsidian': {
+				'charcoal': {
 					50: '#f6f6f6',
 					100: '#e7e7e7',
 					200: '#d1d1d1',
@@ -43,9 +43,9 @@ export default {
 					600: '#5d5d5d',
 					700: '#4f4f4f',
 					800: '#454545',
-					900: '#1c1b1a',
+					900: '#1f1f1f',
 				},
-				'alabaster': {
+				'cream': {
 					50: '#f7f3eb',
 					100: '#f2eddf',
 					200: '#e8ddc9',
@@ -57,17 +57,17 @@ export default {
 					800: '#7a6547',
 					900: '#64533b',
 				},
-				'blush-clay': {
-					50: '#fdf7f5',
-					100: '#fceee9',
-					200: '#f8ddd7',
-					300: '#f3c3b7',
-					400: '#eba194',
-					500: '#e5b8a9',
-					600: '#d1947e',
-					700: '#b87a5f',
-					800: '#99654f',
-					900: '#7f5545',
+				'dusty-blush': {
+					50: '#faf8f7',
+					100: '#f4f0ee',
+					200: '#ebe0dd',
+					300: '#ddc8c3',
+					400: '#ccaca5',
+					500: '#bfa8a1',
+					600: '#a6918a',
+					700: '#8b7a74',
+					800: '#726560',
+					900: '#5e5450',
 				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',

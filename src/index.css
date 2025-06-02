@@ -5,33 +5,33 @@
 
 @layer base {
   :root {
-    --background: 28 27 26; /* Obsidian Black */
-    --foreground: 247 243 235; /* Alabaster White */
+    --background: 31 31 31; /* Charcoal Black */
+    --foreground: 247 243 235; /* Warm Cream */
 
-    --card: 28 27 26;
+    --card: 31 31 31;
     --card-foreground: 247 243 235;
 
-    --popover: 28 27 26;
+    --popover: 31 31 31;
     --popover-foreground: 247 243 235;
 
-    --primary: 220 196 145; /* Golden Sand */
-    --primary-foreground: 28 27 26;
+    --primary: 212 162 156; /* Rose Gold */
+    --primary-foreground: 31 31 31;
 
-    --secondary: 69 83 69;
+    --secondary: 69 69 69;
     --secondary-foreground: 247 243 235;
 
-    --muted: 69 83 69;
+    --muted: 69 69 69;
     --muted-foreground: 161 161 161;
 
-    --accent: 220 196 145; /* Golden Sand */
-    --accent-foreground: 28 27 26;
+    --accent: 212 162 156; /* Rose Gold */
+    --accent-foreground: 31 31 31;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 69 83 69;
-    --input: 69 83 69;
-    --ring: 220 196 145; /* Golden Sand */
+    --border: 69 69 69;
+    --input: 69 69 69;
+    --ring: 212 162 156; /* Rose Gold */
 
     --radius: 0.5rem;
   }
@@ -52,13 +52,13 @@
 @layer components {
   .luxury-gradient {
     background: linear-gradient(135deg, 
-      #1c1b1a 0%, 
-      #2a2825 50%, 
-      #3d3834 100%);
+      #1f1f1f 0%, 
+      #2a2a2a 50%, 
+      #3d3d3d 100%);
   }
 
-  .golden-text-gradient {
-    background: linear-gradient(135deg, #dcc491, #d4bb7e, #cbb26b);
+  .rose-gold-text-gradient {
+    background: linear-gradient(135deg, #d4a29c, #c48e84, #b17a6e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -66,7 +66,7 @@
 
   .glass-effect {
     backdrop-filter: blur(10px);
-    background: rgba(28, 27, 26, 0.8);
-    border: 1px solid rgba(220, 196, 145, 0.2);
+    background: rgba(31, 31, 31, 0.8);
+    border: 1px solid rgba(212, 162, 156, 0.2);
   }
 }

@@ -73,7 +73,7 @@ const Events = () => {
     <div className="min-h-screen pt-8 px-6">
       {/* Header */}
       <div className="text-center mb-8">
-        <h1 className="text-4xl md:text-5xl font-bold gold-text-gradient mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold rose-gold-text-gradient mb-4">
           Fashion Events
         </h1>
         <p className="text-cream-300 text-lg max-w-2xl mx-auto">
@@ -89,8 +89,8 @@ const Events = () => {
             className={cn(
               "rounded-full px-6 py-2 transition-all duration-300",
               activeTab === "upcoming" 
-                ? "bg-gold-500 text-charcoal-900 hover:bg-gold-600" 
-                : "text-cream-300 hover:text-gold-400"
+                ? "bg-rose-gold-500 text-charcoal-900 hover:bg-rose-gold-600" 
+                : "text-cream-300 hover:text-rose-gold-400"
             )}
             onClick={() => setActiveTab("upcoming")}
           >
@@ -101,8 +101,8 @@ const Events = () => {
             className={cn(
               "rounded-full px-6 py-2 transition-all duration-300",
               activeTab === "past" 
-                ? "bg-gold-500 text-charcoal-900 hover:bg-gold-600" 
-                : "text-cream-300 hover:text-gold-400"
+                ? "bg-rose-gold-500 text-charcoal-900 hover:bg-rose-gold-600" 
+                : "text-cream-300 hover:text-rose-gold-400"
             )}
             onClick={() => setActiveTab("past")}
           >
@@ -116,7 +116,7 @@ const Events = () => {
         {currentEvents.map((event, index) => (
           <Card 
             key={event.id} 
-            className="bg-charcoal-800/50 border-gold-400/20 hover:border-gold-400/40 transition-all duration-300 animate-slide-up overflow-hidden"
+            className="bg-charcoal-800/50 border-rose-gold-400/20 hover:border-rose-gold-400/40 transition-all duration-300 animate-slide-up overflow-hidden"
             style={{ animationDelay: `${index * 0.1}s` }}
           >
             <div className="md:flex">
@@ -132,7 +132,7 @@ const Events = () => {
                     <h3 className="text-2xl font-bold text-cream-100 mb-2">
                       {event.title}
                     </h3>
-                    <Badge className="bg-gold-400/20 text-gold-400 border-gold-400/30 mb-2">
+                    <Badge className="bg-dusty-blush-400/20 text-dusty-blush-400 border-dusty-blush-400/30 mb-2">
                       {event.theme}
                     </Badge>
                   </div>
@@ -140,7 +140,7 @@ const Events = () => {
                     variant="ghost"
                     size="sm"
                     onClick={() => toggleEventExpansion(event.id)}
-                    className="text-gold-400 hover:text-gold-300"
+                    className="text-rose-gold-400 hover:text-rose-gold-300"
                   >
                     {expandedEvent === event.id ? <ChevronUp /> : <ChevronDown />}
                   </Button>
@@ -154,7 +154,7 @@ const Events = () => {
                   <div className="flex items-center gap-2">
                     <MapPin size={16} />
                     <span className="text-sm">{event.location}</span>
-                    <ExternalLink size={14} className="text-gold-400 cursor-pointer hover:text-gold-300" />
+                    <ExternalLink size={14} className="text-rose-gold-400 cursor-pointer hover:text-rose-gold-300" />
                   </div>
                 </div>
 
@@ -166,10 +166,10 @@ const Events = () => {
                 {expandedEvent === event.id && (
                   <div className="space-y-4 animate-fade-in">
                     <div>
-                      <h4 className="text-lg font-semibold text-gold-400 mb-2">Featured Designers</h4>
+                      <h4 className="text-lg font-semibold text-rose-gold-400 mb-2">Featured Designers</h4>
                       <div className="grid gap-2">
                         {event.designers.map((designer, idx) => (
-                          <div key={idx} className="p-3 bg-charcoal-900/50 rounded-lg border border-gold-400/10">
+                          <div key={idx} className="p-3 bg-charcoal-900/50 rounded-lg border border-rose-gold-400/10">
                             <p className="font-medium text-cream-100">{designer.name}</p>
                             <p className="text-sm text-cream-400">{designer.bio}</p>
                           </div>
@@ -178,10 +178,10 @@ const Events = () => {
                     </div>
 
                     <div>
-                      <h4 className="text-lg font-semibold text-gold-400 mb-2">Featured Artists</h4>
+                      <h4 className="text-lg font-semibold text-rose-gold-400 mb-2">Featured Artists</h4>
                       <div className="grid gap-2">
                         {event.artists.map((artist, idx) => (
-                          <div key={idx} className="p-3 bg-charcoal-900/50 rounded-lg border border-gold-400/10">
+                          <div key={idx} className="p-3 bg-charcoal-900/50 rounded-lg border border-rose-gold-400/10">
                             <p className="font-medium text-cream-100">{artist.name}</p>
                             <p className="text-sm text-cream-400">{artist.bio}</p>
                           </div>
@@ -193,7 +193,7 @@ const Events = () => {
 
                 {activeTab === "upcoming" && (
                   <Button 
-                    className="bg-gold-500 hover:bg-gold-600 text-charcoal-900 mt-4"
+                    className="bg-rose-gold-500 hover:bg-rose-gold-600 text-charcoal-900 mt-4"
                   >
                     Get Tickets
                   </Button>
