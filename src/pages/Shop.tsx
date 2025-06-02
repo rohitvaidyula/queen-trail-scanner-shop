@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Filter, SortAsc, SortDesc } from "lucide-react";
+import { Filter, SortAsc } from "lucide-react";
 
 const Shop = () => {
   const [selectedDesigner, setSelectedDesigner] = useState<string>("all");
@@ -75,10 +75,10 @@ const Shop = () => {
     <div className="min-h-screen pt-8 px-6">
       {/* Header */}
       <div className="text-center mb-8">
-        <h1 className="text-4xl md:text-5xl font-bold gold-text-gradient mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold golden-text-gradient mb-4">
           Designer Marketplace
         </h1>
-        <p className="text-cream-300 text-lg max-w-2xl mx-auto">
+        <p className="text-alabaster-200 text-lg max-w-2xl mx-auto">
           Discover and purchase exclusive pieces from our curated collection of luxury designers.
         </p>
       </div>
@@ -88,16 +88,16 @@ const Shop = () => {
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
-              <Filter size={20} className="text-gold-400" />
-              <span className="text-cream-300 font-medium">Filter by Designer:</span>
+              <Filter size={20} className="text-golden-sand-300" />
+              <span className="text-alabaster-200 font-medium">Filter by Designer:</span>
             </div>
             <Select value={selectedDesigner} onValueChange={setSelectedDesigner}>
-              <SelectTrigger className="w-48 bg-charcoal-800 border-gold-400/20 text-cream-100">
+              <SelectTrigger className="w-48 bg-obsidian-800 border-golden-sand-300/20 text-alabaster-50">
                 <SelectValue />
               </SelectTrigger>
-              <SelectContent className="bg-charcoal-800 border-gold-400/20">
+              <SelectContent className="bg-obsidian-800 border-golden-sand-300/20">
                 {designers.map(designer => (
-                  <SelectItem key={designer} value={designer} className="text-cream-100 hover:bg-gold-400/20">
+                  <SelectItem key={designer} value={designer} className="text-alabaster-50 hover:bg-golden-sand-300/20">
                     {designer === "all" ? "All Designers" : designer}
                   </SelectItem>
                 ))}
@@ -107,18 +107,18 @@ const Shop = () => {
 
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
-              <SortAsc size={20} className="text-gold-400" />
-              <span className="text-cream-300 font-medium">Sort by:</span>
+              <SortAsc size={20} className="text-golden-sand-300" />
+              <span className="text-alabaster-200 font-medium">Sort by:</span>
             </div>
             <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className="w-48 bg-charcoal-800 border-gold-400/20 text-cream-100">
+              <SelectTrigger className="w-48 bg-obsidian-800 border-golden-sand-300/20 text-alabaster-50">
                 <SelectValue />
               </SelectTrigger>
-              <SelectContent className="bg-charcoal-800 border-gold-400/20">
-                <SelectItem value="name" className="text-cream-100 hover:bg-gold-400/20">Name</SelectItem>
-                <SelectItem value="price-low" className="text-cream-100 hover:bg-gold-400/20">Price: Low to High</SelectItem>
-                <SelectItem value="price-high" className="text-cream-100 hover:bg-gold-400/20">Price: High to Low</SelectItem>
-                <SelectItem value="designer" className="text-cream-100 hover:bg-gold-400/20">Designer</SelectItem>
+              <SelectContent className="bg-obsidian-800 border-golden-sand-300/20">
+                <SelectItem value="name" className="text-alabaster-50 hover:bg-golden-sand-300/20">Name</SelectItem>
+                <SelectItem value="price-low" className="text-alabaster-50 hover:bg-golden-sand-300/20">Price: Low to High</SelectItem>
+                <SelectItem value="price-high" className="text-alabaster-50 hover:bg-golden-sand-300/20">Price: High to Low</SelectItem>
+                <SelectItem value="designer" className="text-alabaster-50 hover:bg-golden-sand-300/20">Designer</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -131,7 +131,7 @@ const Shop = () => {
           {filteredProducts.map((product, index) => (
             <Card 
               key={product.id}
-              className="bg-charcoal-800/50 border-gold-400/20 hover:border-gold-400/40 transition-all duration-300 hover:scale-105 animate-slide-up group overflow-hidden"
+              className="bg-obsidian-800/50 border-golden-sand-300/20 hover:border-golden-sand-300/40 transition-all duration-300 hover:scale-105 animate-slide-up group overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div 
@@ -140,19 +140,19 @@ const Shop = () => {
               />
               <CardContent className="p-6">
                 <div className="space-y-3">
-                  <h3 className="text-xl font-semibold text-cream-100 group-hover:text-gold-400 transition-colors duration-300">
+                  <h3 className="text-xl font-semibold text-alabaster-50 group-hover:text-golden-sand-300 transition-colors duration-300">
                     {product.name}
                   </h3>
-                  <p className="text-cream-400 text-sm">
+                  <p className="text-alabaster-300 text-sm">
                     by {product.designer}
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-gold-400">
+                    <span className="text-2xl font-bold text-golden-sand-300">
                       ${product.price.toLocaleString()}
                     </span>
                   </div>
                   <Button 
-                    className="w-full bg-gold-500 hover:bg-gold-600 text-charcoal-900 font-semibold rounded-full transition-all duration-300 hover:scale-105"
+                    className="w-full bg-golden-sand-300 hover:bg-golden-sand-400 text-obsidian-900 font-semibold rounded-full transition-all duration-300 hover:scale-105"
                   >
                     Buy Now
                   </Button>
@@ -165,7 +165,7 @@ const Shop = () => {
 
       {/* Results Summary */}
       <div className="max-w-6xl mx-auto mt-12 mb-8 text-center">
-        <p className="text-cream-400">
+        <p className="text-alabaster-300">
           Showing {filteredProducts.length} of {products.length} pieces
           {selectedDesigner !== "all" && ` by ${selectedDesigner}`}
         </p>
