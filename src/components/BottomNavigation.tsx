@@ -14,7 +14,7 @@ const BottomNavigation = () => {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 glass-effect border-t border-warm-clay-300/20 z-50">
+    <nav className="fixed bottom-0 left-0 right-0 glass-effect border-t border-rose-gold-300/20 z-50">
       <div className="flex justify-around items-center py-2 px-4">
         {navItems.map(({ path, icon: Icon, label }) => (
           <Link
@@ -23,8 +23,8 @@ const BottomNavigation = () => {
             className={cn(
               "flex flex-col items-center p-2 rounded-lg transition-all duration-200",
               location.pathname === path
-                ? "text-warm-clay-500"
-                : "text-espresso-700 hover:text-warm-clay-400"
+                ? "text-rose-gold-300"
+                : "text-cream-200 hover:text-rose-gold-400"
             )}
           >
             <Icon 
