@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -7,6 +8,7 @@ import { MapPin, Calendar, ExternalLink, ChevronDown, ChevronUp } from "lucide-r
 import { cn } from "@/lib/utils";
 
 const Events = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<"upcoming" | "past">("upcoming");
   const [expandedEvent, setExpandedEvent] = useState<number | null>(null);
 
@@ -69,28 +71,32 @@ const Events = () => {
     setExpandedEvent(expandedEvent === eventId ? null : eventId);
   };
 
+  const handleGetTickets = (event: any) => {
+    navigate("/rsvp", { state: { event } });
+  };
+
   return (
-    <div className="min-h-screen pt-8 px-6">
+    <div className="min-h-screen pt-8 px-6 bg-creamy-sand-50">
       {/* Header */}
       <div className="text-center mb-8">
-        <h1 className="text-4xl md:text-5xl font-bold warm-clay-text-gradient mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-charcoal-800 mb-4">
           Fashion Events
         </h1>
-        <p className="text-espresso-600 text-lg max-w-2xl mx-auto">
+        <p className="text-charcoal-600 text-lg max-w-2xl mx-auto">
           Discover exclusive runway shows, designer showcases, and luxury fashion experiences.
         </p>
       </div>
 
       {/* Toggle Buttons */}
       <div className="flex justify-center mb-8">
-        <div className="bg-creamy-sand-200 rounded-full p-1 flex">
+        <div className="bg-cream-200 rounded-full p-1 flex">
           <Button
             variant={activeTab === "upcoming" ? "default" : "ghost"}
             className={cn(
               "rounded-full px-6 py-2 transition-all duration-300",
               activeTab === "upcoming" 
-                ? "bg-warm-clay-500 text-creamy-sand-50 hover:bg-warm-clay-600" 
-                : "text-espresso-600 hover:text-warm-clay-500"
+                ? "bg-rose-gold-500 text-cream-50 hover:bg-rose-gold-600" 
+                : "text-charcoal-600 hover:text-rose-gold-500"
             )}
             onClick={() => setActiveTab("upcoming")}
           >
@@ -101,8 +107,8 @@ const Events = () => {
             className={cn(
               "rounded-full px-6 py-2 transition-all duration-300",
               activeTab === "past" 
-                ? "bg-warm-clay-500 text-creamy-sand-50 hover:bg-warm-clay-600" 
-                : "text-espresso-600 hover:text-warm-clay-500"
+                ? "bg-rose-gold-500 text-cream-50 hover:bg-rose-gold-600" 
+                : "text-charcoal-600 hover:text-rose-gold-500"
             )}
             onClick={() => setActiveTab("past")}
           >
@@ -116,7 +122,7 @@ const Events = () => {
         {currentEvents.map((event, index) => (
           <Card 
             key={event.id} 
-            className="bg-background border-warm-clay-400/20 hover:border-warm-clay-400/40 transition-all duration-300 animate-slide-up overflow-hidden"
+            className="bg-cream-100 border-rose-gold-200 hover:border-rose-gold-300 transition-all duration-300 animate-slide-up overflow-hidden"
             style={{ animationDelay: `${index * 0.1}s` }}
           >
             <div className="md:flex">
@@ -129,10 +135,10 @@ const Events = () => {
               <div className="md:w-2/3 p-6">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-2xl font-bold text-espresso-800 mb-2">
+                    <h3 className="text-2xl font-bold text-charcoal-800 mb-2">
                       {event.title}
                     </h3>
-                    <Badge className="bg-bronze-glow-400/20 text-bronze-glow-700 border-bronze-glow-400/30 mb-2">
+                    <Badge className="bg-rose-gold-200 text-rose-gold-800 border-rose-gold-300 mb-2">
                       {event.theme}
                     </Badge>
                   </div>
@@ -140,13 +146,13 @@ const Events = () => {
                     variant="ghost"
                     size="sm"
                     onClick={() => toggleEventExpansion(event.id)}
-                    className="text-warm-clay-500 hover:text-warm-clay-600"
+                    className="text-rose-gold-500 hover:text-rose-gold-600"
                   >
                     {expandedEvent === event.id ? <ChevronUp /> : <ChevronDown />}
                   </Button>
                 </div>
 
-                <div className="flex items-center gap-4 text-espresso-600 mb-4">
+                <div className="flex items-center gap-4 text-charcoal-600 mb-4">
                   <div className="flex items-center gap-2">
                     <Calendar size={16} />
                     <span className="text-sm">{event.date}</span>
@@ -154,11 +160,11 @@ const Events = () => {
                   <div className="flex items-center gap-2">
                     <MapPin size={16} />
                     <span className="text-sm">{event.location}</span>
-                    <ExternalLink size={14} className="text-warm-clay-500 cursor-pointer hover:text-warm-clay-600" />
+                    <ExternalLink size={14} className="text-rose-gold-500 cursor-pointer hover:text-rose-gold-600" />
                   </div>
                 </div>
 
-                <p className="text-espresso-600 mb-4">
+                <p className="text-charcoal-600 mb-4">
                   {event.description}
                 </p>
 
@@ -166,24 +172,24 @@ const Events = () => {
                 {expandedEvent === event.id && (
                   <div className="space-y-4 animate-fade-in">
                     <div>
-                      <h4 className="text-lg font-semibold text-warm-clay-500 mb-2">Featured Designers</h4>
+                      <h4 className="text-lg font-semibold text-rose-gold-600 mb-2">Featured Designers</h4>
                       <div className="grid gap-2">
                         {event.designers.map((designer, idx) => (
-                          <div key={idx} className="p-3 bg-creamy-sand-100 rounded-lg border border-warm-clay-400/10">
-                            <p className="font-medium text-espresso-800">{designer.name}</p>
-                            <p className="text-sm text-espresso-600">{designer.bio}</p>
+                          <div key={idx} className="p-3 bg-cream-200 rounded-lg border border-rose-gold-200">
+                            <p className="font-medium text-charcoal-800">{designer.name}</p>
+                            <p className="text-sm text-charcoal-600">{designer.bio}</p>
                           </div>
                         ))}
                       </div>
                     </div>
 
                     <div>
-                      <h4 className="text-lg font-semibold text-warm-clay-500 mb-2">Featured Artists</h4>
+                      <h4 className="text-lg font-semibold text-rose-gold-600 mb-2">Featured Artists</h4>
                       <div className="grid gap-2">
                         {event.artists.map((artist, idx) => (
-                          <div key={idx} className="p-3 bg-creamy-sand-100 rounded-lg border border-warm-clay-400/10">
-                            <p className="font-medium text-espresso-800">{artist.name}</p>
-                            <p className="text-sm text-espresso-600">{artist.bio}</p>
+                          <div key={idx} className="p-3 bg-cream-200 rounded-lg border border-rose-gold-200">
+                            <p className="font-medium text-charcoal-800">{artist.name}</p>
+                            <p className="text-sm text-charcoal-600">{artist.bio}</p>
                           </div>
                         ))}
                       </div>
@@ -193,7 +199,8 @@ const Events = () => {
 
                 {activeTab === "upcoming" && (
                   <Button 
-                    className="bg-warm-clay-500 hover:bg-warm-clay-600 text-creamy-sand-50 mt-4"
+                    onClick={() => handleGetTickets(event)}
+                    className="bg-rose-gold-500 hover:bg-rose-gold-600 text-cream-50 mt-4"
                   >
                     Get Tickets
                   </Button>

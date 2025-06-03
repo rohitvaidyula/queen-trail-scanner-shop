@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,7 +19,44 @@ export default {
 		},
 		extend: {
 			colors: {
-				// Creamy Sand and Espresso Brown color palette
+				// Rose Gold and Charcoal color palette
+				'rose-gold': {
+					50: '#fdf8f6',
+					100: '#f9efeb',
+					200: '#f2ddd2',
+					300: '#e8c4b0',
+					400: '#dca68b',
+					500: '#d4a29c',
+					600: '#c8958a',
+					700: '#b47f70',
+					800: '#956a5b',
+					900: '#7a574c',
+				},
+				'charcoal': {
+					50: '#f6f6f6',
+					100: '#e7e7e7',
+					200: '#d1d1d1',
+					300: '#b0b0b0',
+					400: '#888888',
+					500: '#6d6d6d',
+					600: '#5d5d5d',
+					700: '#4f4f4f',
+					800: '#454545',
+					900: '#1f1f1f',
+				},
+				'cream': {
+					50: '#f7f3eb',
+					100: '#f1ebe0',
+					200: '#e8ddc7',
+					300: '#dcc7a3',
+					400: '#ccab7d',
+					500: '#c19762',
+					600: '#b38856',
+					700: '#95724a',
+					800: '#795e41',
+					900: '#634e37',
+				},
+				// Keep existing warm-clay, espresso, creamy-sand, bronze-glow for backward compatibility
 				'warm-clay': {
 					50: '#fdf9f5',
 					100: '#faf2eb',

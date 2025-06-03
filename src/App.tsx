@@ -9,6 +9,7 @@ import Events from "./pages/Events";
 import Scanner from "./pages/Scanner";
 import ScanResult from "./pages/ScanResult";
 import Shop from "./pages/Shop";
+import RSVP from "./pages/RSVP";
 import BottomNavigation from "./components/BottomNavigation";
 import NotFound from "./pages/NotFound";
 
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/scanner" element={<Scanner />} />
             <Route path="/scan-result" element={<ScanResult />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/rsvp" element={<RSVP />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <BottomNavigation />
