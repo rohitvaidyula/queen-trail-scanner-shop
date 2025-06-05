@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigate } from 'react-router-dom';
 
 const Events = () => {
-  const navigation = useNavigation();
+  const navigate = useNavigate();
 
   const events = [
     {
@@ -90,7 +89,7 @@ const Events = () => {
               
               <TouchableOpacity 
                 style={styles.rsvpButton}
-                onPress={() => navigation.navigate('RSVP', { eventId: event.id })}
+                onPress={() => navigate('/rsvp', { state: { eventId: event.id } })}
               >
                 <Text style={styles.rsvpButtonText}>Get Tickets</Text>
               </TouchableOpacity>

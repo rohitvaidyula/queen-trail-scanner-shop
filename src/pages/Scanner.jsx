@@ -1,24 +1,23 @@
-
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigate } from 'react-router-dom';
 
 const Scanner = () => {
   const [isScanning, setIsScanning] = useState(false);
-  const navigation = useNavigation();
+  const navigate = useNavigate();
 
   const handleCapture = () => {
     setIsScanning(true);
     // Simulate scanning process
     setTimeout(() => {
       setIsScanning(false);
-      navigation.navigate('ScanResult');
+      navigate('/scan-result');
     }, 2000);
   };
 
   const handleUpload = () => {
     // Simulate file upload
-    navigation.navigate('ScanResult');
+    navigate('/scan-result');
   };
 
   return (
