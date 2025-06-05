@@ -1,10 +1,10 @@
 
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
-  const navigation = useNavigation();
+  const navigate = useNavigate();
 
   const featuredEvents = [
     {
@@ -61,7 +61,7 @@ const Index = () => {
           <TouchableOpacity 
             key={event.id}
             style={styles.eventCard}
-            onPress={() => navigation.navigate('Events')}
+            onPress={() => navigate('/events')}
           >
             <Image 
               source={{ uri: event.image }}
@@ -78,7 +78,7 @@ const Index = () => {
         
         <TouchableOpacity 
           style={styles.viewAllButton}
-          onPress={() => navigation.navigate('Events')}
+          onPress={() => navigate('/events')}
         >
           <Text style={styles.viewAllText}>View All Events</Text>
         </TouchableOpacity>
