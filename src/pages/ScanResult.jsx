@@ -1,10 +1,10 @@
 
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigate } from 'react-router-dom';
 
 const ScanResult = () => {
-  const navigation = useNavigation();
+  const navigate = useNavigate();
 
   const scanResult = {
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500",
@@ -24,7 +24,7 @@ const ScanResult = () => {
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity 
-          onPress={() => navigation.goBack()}
+          onPress={() => navigate(-1)}
           style={styles.backButton}
         >
           <Text style={styles.backButtonText}>← Back to Scanner</Text>
@@ -76,7 +76,7 @@ const ScanResult = () => {
           {/* CTA Button */}
           <TouchableOpacity 
             style={styles.buyButton}
-            onPress={() => navigation.navigate('Shop')}
+            onPress={() => navigate('/shop')}
           >
             <Text style={styles.buyButtonText}>🛍️ Buy This Look</Text>
           </TouchableOpacity>
