@@ -1,11 +1,9 @@
-
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput, Alert } from 'react-native';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useNavigate } from 'react-router-dom';
 
 const RSVP = () => {
-  const navigation = useNavigation();
-  const route = useRoute();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -55,7 +53,7 @@ const RSVP = () => {
         </Text>
         <TouchableOpacity 
           style={styles.backButton}
-          onPress={() => navigation.navigate('Events')}
+          onPress={() => navigate('/events')}
         >
           <Text style={styles.backButtonText}>Back to Events</Text>
         </TouchableOpacity>
@@ -68,7 +66,7 @@ const RSVP = () => {
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity 
-          onPress={() => navigation.goBack()}
+          onPress={() => navigate(-1)}
           style={styles.backLink}
         >
           <Text style={styles.backLinkText}>← Back to Events</Text>
